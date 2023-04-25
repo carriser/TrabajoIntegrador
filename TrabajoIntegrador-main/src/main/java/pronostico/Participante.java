@@ -7,9 +7,9 @@ public class Participante {
     String idparticipante;
     String nombre;
     Integer puntos;
-    Integer acierto = 0;
-    Integer jugada = 0;
-    Integer extra = 0;
+    Integer acierto;
+    Integer jugada;
+    Integer extra;
 
     public Integer getPuntos() {
         return puntos;
@@ -20,9 +20,12 @@ public class Participante {
     }
 
     public Participante(String id,String nombre) {
-        this.idparticipante=id;
-        this.nombre=nombre;
-        this.puntos=0;
+        this.idparticipante = id;
+        this.nombre = nombre; 
+        this.puntos = 0;
+        this.acierto = 0;
+        this.jugada = 0;
+        this.extra = 0;
     }
 
    public String getIdparticipante() {
@@ -46,7 +49,7 @@ public class Participante {
     	if(puntos != 0) {
         	this.acierto ++;
         }
-    	this.puntos=this.puntos+puntos;
+    	this.puntos = this.puntos + puntos;
     	puntosExtras(jugada, acierto);
     }
     
@@ -73,6 +76,6 @@ public class Participante {
         		", aciertos: " + acierto +
         		", puntos = " + puntos +
         		", en un total de: " + jugada + " apuestas. " +
-        		"Puntos extras por acertar todas las apuestas: " + extra + " puntos";
+        		"Puntos extras por acertar todas las apuestas: " + extra + " puntos.";
     }
 }
